@@ -9,20 +9,15 @@ const movies = [
   { releaseYear: 2004, name: 'Homem-Aranha 2' }
 ]
 
-const moviesTwo = [...movies, {}]
+const moviesCopy = movies.map(movie => {
+  return {
+    releaseYear: movie.releaseYear,
+    name: movie.name
+  }
+})
 
-const compareNumbers = (a, b) => a - b
-
-
-const getMovieName = movies.map(({ name }) => name)
-
-
-const moviesOrderPerYear = movies
-  .map(({ releaseYear}) => releaseYear)
-  .sort(compareNumbers)
-
-moviesOrderPerYear.forEach((year) => {
-  console.log(year)
+moviesCopy.sort((a, b) => {
+  return a.releaseYear - b.releaseYear
 })
 
 const renderMoviesList = () => {
@@ -39,15 +34,15 @@ const renderMoviesList = () => {
 
   })
 
+  moviesCopy.forEach(({ releaseYear, name }) => {
+    const li = document.createElement('li')
+    li.innerHTML = `${name}; ano de lançamento: <span class="highlighted-text">${releaseYear}</span>`
+
+    moviesPerYearFragment.append(li)
+  })
+
   moviesList.append(moviesListFragment)
   moviesPerYear.append(moviesPerYearFragment)
 }
 
-
-
 renderMoviesList()
-
-// const li = document.createElement('li')
-//     li.innerHTML = `${name}; ano de lançamento: <span class="highlighted-text">${releaseYear}</span>`
-
-//     moviesPerYearFragment.append(li)
