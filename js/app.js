@@ -28,7 +28,7 @@ const renderMoviesList = () => {
 
   movies.map(({ name }) => {
     const li = document.createElement('li')
-    li.innerText = `${name}`
+    li.innerText = `${name}.`
 
     moviesListFragment.append(li)
 
@@ -36,7 +36,7 @@ const renderMoviesList = () => {
 
   moviesCopy.forEach(({ releaseYear, name }) => {
     const li = document.createElement('li')
-    li.innerHTML = `${name}; ano de lançamento: <span class="highlighted-text">${releaseYear}</span>`
+    li.innerHTML = `${name}; ano de lançamento: <span class="highlighted-text">${releaseYear}</span>.`
 
     moviesPerYearFragment.append(li)
   })

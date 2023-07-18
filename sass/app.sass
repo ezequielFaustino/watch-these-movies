@@ -1,3 +1,43 @@
 @use 'variables'
 @use 'reset'
 @use 'utilities'
+@use 'mixins'
+
+body
+  font-family: variables.$ff-base
+  background-color: variables.$clr-primary
+
+.container
+  padding: 0 1em
+  max-width: 60em
+  margin-inline: auto
+  background-color: variables.$clr-secondary
+
+  article
+    padding: 4rem 0
+
+    @include mixins.mobile
+      padding: 7rem 0
+
+    h1
+      font-size: clamp(1.5rem, 1rem + 10vw, 2rem)
+
+    h2
+      margin-top: 1em
+      font-size: clamp(1.25rem, 1rem + 10vw, 1.5rem)
+
+    p
+      margin-top: 1em
+      font-weight: 500
+      font-size: clamp(1rem, 1rem + 10vw, 1.25rem)
+
+    ul, ol
+      li
+        margin: .5rem 0
+
+  img
+    margin-top: 1em
+
+  footer
+    p
+      padding-bottom: 1em

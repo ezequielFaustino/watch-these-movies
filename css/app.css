@@ -15,7 +15,7 @@ p {
 h1,
 h2,
 h3 {
-  font-family: sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 700;
   line-height: 1;
 }
@@ -33,7 +33,52 @@ img {
 
 .highlighted-text {
   font-weight: 500;
-  color: blue;
+  color: #0D1282;
+}
+
+.text-center {
+  text-align: center;
+}
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+  background-color: #606C5D;
+}
+
+.container {
+  padding: 0 1em;
+  max-width: 60em;
+  margin-inline: auto;
+  background-color: #fff;
+}
+.container article {
+  padding: 4rem 0;
+}
+@media (max-width: 40em) {
+  .container article {
+    padding: 7rem 0;
+  }
+}
+.container article h1 {
+  font-size: clamp(1.5rem, 1rem + 10vw, 2rem);
+}
+.container article h2 {
+  margin-top: 1em;
+  font-size: clamp(1.25rem, 1rem + 10vw, 1.5rem);
+}
+.container article p {
+  margin-top: 1em;
+  font-weight: 500;
+  font-size: clamp(1rem, 1rem + 10vw, 1.25rem);
+}
+.container article ul li, .container article ol li {
+  margin: 0.5rem 0;
+}
+.container img {
+  margin-top: 1em;
+}
+.container footer p {
+  padding-bottom: 1em;
 }
 
 /*# sourceMappingURL=app.css.map */
